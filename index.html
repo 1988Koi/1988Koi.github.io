@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <span class="bubble b1" aria-hidden="true"></span>
+  <span class="bubble b2" aria-hidden="true"></span>
+  <span class="bubble b3" aria-hidden="true"></span>
+
+  <main>
+    <header class="glass hero">
+      <h1>Your Name</h1>
+      <p>Aspiring web developer, learning PHP, python, French and Chinese</p>
+      <p>Good afternoon, Welcome to my page.</p>
+      <ul class="pills">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>PHP</li>
+                  <li>Problem solving</li>
+                  <li>Python</li>
+                  <li>French</li>
+                  <li>English</li>
+              </ul>
+    </header>
+
+    <section aria-labelledby="work">
+      <h2 id="work">Projects</h2>
+      <div class="grid">
+                  <article class="glass card">
+            <h3>Aqua Portfolio</h3>
+            <p>This very page, built with PHP and a glossy Frutiger Aero style.</p>
+            <p class="tags">PHP, CSS</p>
+                      </article>
+                  <article class="glass card">
+            <h3>Guestbook</h3>
+            <p>A small page where visitors can leave a message.</p>
+            <p class="tags">PHP, Forms</p>
+                      </article>
+                  <article class="glass card">
+            <h3>Someicho</h3>
+            <p>A Python game made with nothing but pure Python and Json.</p>
+            <p class="tags">Python, Json</p>
+                        <p><a href="https://github.com/1988Koi/Jogo-Python" target="_blank" rel="noopener noreferrer">View project</a></p>
+                    </article>
+              </div>
+    </section>
+
+    <section class="glass contact" aria-labelledby="contact">
+      <h2 id="contact">Say hello</h2>
+            <form method="post" action="https://formspree.io/f/xdeewdrq">
+        <label>Your name
+          <input name="from" required value="">
+        </label>
+        <label>Email or phone
+              <input name="contact" required value="">
+        </label>
+        <label>Message
+          <textarea name="message" rows="4" required maxlength="500"></textarea>
+        </label>
+        <button type="submit">Send message</button>
+      </form>
+    </section>
+
+    <footer><p>&copy; 2026 Your Name</p></footer>
+  </main>
+</body>
+</html>
