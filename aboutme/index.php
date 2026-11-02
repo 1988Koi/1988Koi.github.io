@@ -1,0 +1,22 @@
+<?php
+require __DIR__ . "/../data.php";
+require __DIR__ . "/../functions.php";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | <?= e($name) ?></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <header class="glass hero">
+      <h1>About me</h1>
+      <p>Hello! This is a WIP! Keeping it short, I like fruitiger aero and I honestly think it's the best type of style, god bless who came up with it.</p>
+      <p><a href="/">Back to home</a></p>
+    </header>
+  </main>
+</body>
+</html>

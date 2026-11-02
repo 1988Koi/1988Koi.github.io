@@ -1,9 +1,6 @@
 <?php
 require __DIR__ . "/data.php";
-
-function e(string $text): string {
-    return htmlspecialchars($text, ENT_QUOTES, "UTF-8");
-}
+require __DIR__ . "/functions.php";
 
 function links(string $url, string $label): string{
     return '<a href="' . e($url) . '" target="_blank" rel="noopener noreferrer">' . e($label) . '</a>';
@@ -62,6 +59,7 @@ if (($_SERVER["REQUEST_METHOD"] ?? "GET") === "POST") {
   <main>
     <header class="glass hero">
       <h1><?= e($name) ?></h1>
+      <p class ="card"><a href="/aboutme/">About me</a></p>
       <p><?= e($tagline) ?></p>
       <p><?= greetingtime() ?>, Welcome to my page.</p>
       <ul class="pills">

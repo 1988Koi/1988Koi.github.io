@@ -1,6 +1,6 @@
 <?php
 $name    = "Rafael Eduardo dos Santos Silva";
-$tagline = "Aspiring web developer, learning PHP, python, French and Chinese";
+$tagline = "Aspiring do it all, learning PHP, DevOps, Linux, python, French and Chinese";
 
 $skills = ["HTML", "CSS", "PHP", "Problem solving", "Python", "French", "English"];
 
