@@ -21,4 +21,16 @@ $projects = [
         "tags"  => ["Python", "Json"],
         "link"  => "https://github.com/1988Koi/Jogo-Python",
     ],
+    [
+        "title" => "VaporArch",
+        "desc"  => "A Arch linux distro purely made for DevOps works.",
+        "tags"  => ["Linux"],
+        "link"  => "https://github.com/1988Koi/VaporArch",
+    ],
+    [
+        "title" => "VaporArch Repo",
+        "desc"  => "The repo for VaporArch",
+        "tags"  => ["Linux"],
+        "link"  => "https://github.com/1988Koi/VaporArch-Repo",
+    ],
 ];
