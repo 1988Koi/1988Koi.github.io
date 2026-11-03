@@ -34,3 +34,40 @@ $projects = [
         "link"  => "https://github.com/1988Koi/VaporArch-Repo",
     ],
 ];
+
+$game = [
+    "duration" => 30,
+    "spawnMs" => 600,
+    "riseSeconds" => 5,
+];
+
+$about = [
+    "Initials" => "RE",
+    "intro" => "Hello! I'm learning PHP, Python, Git and Linux, for my first ever Developer job, I like building things with 2000s aestheticsm, but I try to be a do it all!",
+    "learning" => ["PHP and databases(PDO)", "Basics of JS", "Python", "Chinese", "French"],
+    "facts" => [
+        "I built this due to my teacher.",
+        "My favorite design is the 2000s aqua look",
+        "I started learning Python due to a Russian youtuber.",
+    ],
+    "Timeline" => [
+        ["when" => "2013", "what" => "Started learning English."],
+        ["when" => "2014", "what" => "Started learning Python."],
+        ["when" => "2024", "what" => "Started my bachelor's in Computer Science."],
+        ["when" => "2026", "what" => "Started learning more."],
+        ["when" => "2026", "what" => "Started learning French and Chinese."],
+        ["when" => "2026", "what" => "Made a game in pure Python!"],
+        ["when" => "2026", "what" => "Built a Linux distro from scratch with a calamares installer and DevOps tools."],
+    ],
+];
+
+$skillLevels = [
+    "HTML" => 3,
+    "CSS" => 3.2,
+    "PHP" => 2,
+    "JS" => 1,
+    "Git" => 4,
+    "Python" => 4,
+    "Linux" => 3,
+    "English" => 5,
+];

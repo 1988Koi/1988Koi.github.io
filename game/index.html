@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bubble Pop | Rafael Eduardo dos Santos Silva</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <header class="glass hero">
+      <h1>Bubble Pop!</h1>
+      <p>Pop as many bubbles as you can. Smaller bubbles are worth more and vice versa!</p>
+      <p>Score: <strong id="score">0</strong> &nbsp;|&nbsp;
+         Time: <strong id="time">30</strong> &nbsp;|&nbsp;
+         Best: <strong id="best">0</strong></p>
+      <button id="start" type="button">Start</button>
+      <p><a href="/">Back to home</a></p>
+    </header>
+    <div id="area" class="glass play"></div>
+  </main>
+
+  <script>
+    const SETTINGS = {"duration":30,"spawnMs":600,"riseSeconds":5};
+
+    const area = document.getElementById("area");
+    const scoreEl = document.getElementById("score");
+    const timeEl = document.getElementById("time");
+    const bestEl = document.getElementById("best");
+    const startBtn = document.getElementById("start");
+
+    let score = 0, timeLeft = 0, running = false, clock = null, spawner = null;
+
+    // localStorage remembers your best score in this browser.
+    // The try/catch keeps the game working if storage is blocked.
+    let best = 0;
+    try { best = Number(localStorage.getItem("bubble-best")) || 0; } catch (err) {}
+    bestEl.textContent = best;
+
+    function spawn() {
+      const size = 40 + Math.random() * 55;
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "gbubble";
+      b.setAttribute("aria-label", "Pop bubble");
+      b.style.width = b.style.height = size + "px";
+      b.style.left = Math.random() * Math.max(0, area.clientWidth - size) + "px";
+      b.style.animationDuration = SETTINGS.riseSeconds * (0.8 + Math.random() * 0.4) + "s";
+      const points = size < 60 ? 3 : size < 80 ? 2 : 1;
+      b.addEventListener("click", () => {
+        if (!running) return;
+        score += points;
+        scoreEl.textContent = score;
+        b.remove();
+      });
+      b.addEventListener("animationend", () => b.remove());
+      area.appendChild(b);
+    }
+
+    function loop() {
+      if (!running) return;
+      spawn();
+      spawner = setTimeout(loop, SETTINGS.spawnMs);
+    }
+
+    function endGame() {
+      running = false;
+      clearInterval(clock);
+      clearTimeout(spawner);
+      area.replaceChildren();
+      if (score > best) {
+        best = score;
+        bestEl.textContent = best;
+        try { localStorage.setItem("bubble-best", best); } catch (err) {}
+      }
+      startBtn.disabled = false;
+      startBtn.textContent = "Play again";
+    }
+
+    startBtn.addEventListener("click", () => {
+      score = 0;
+      timeLeft = SETTINGS.duration;
+      scoreEl.textContent = 0;
+      timeEl.textContent = timeLeft;
+      running = true;
+      startBtn.disabled = true;
+      loop();
+      clock = setInterval(() => {
+        timeLeft--;
+        timeEl.textContent = timeLeft;
+        if (timeLeft <= 0) endGame();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

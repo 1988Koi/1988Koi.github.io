@@ -67,6 +67,7 @@ if (($_SERVER["REQUEST_METHOD"] ?? "GET") === "POST") {
           <li><?= e($skill) ?></li>
         <?php endforeach; ?>
       </ul>
+      <p class = "card"><a href="/game/">Play Bubble Pop!</a>
     </header>
 
     <section aria-labelledby="work">
